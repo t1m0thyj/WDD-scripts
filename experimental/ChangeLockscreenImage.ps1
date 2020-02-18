@@ -1,8 +1,13 @@
-# To use this script, you must set the "Background" option to "Picture" in the Windows 10 lockscreen settings.
-# TODO Determine why changing the image seems to only work the first time
-# (see https://social.msdn.microsoft.com/Forums/vstudio/en-US/c5f7e014-a1a1-4d62-b550-7976381d62cd/change-windows-8-lockscreen-image-with-wpfservice-only-works-once?forum=wpf)
+# WARN Requires that you have set the "Background" option to "Picture" in the Windows 10 lockscreen settings.
+#
+# TODO Figure out why does changing the image only work once?
+# See https://social.msdn.microsoft.com/Forums/vstudio/en-US/c5f7e014-a1a1-4d62-b550-7976381d62cd/change-windows-8-lockscreen-image-with-wpfservice-only-works-once?forum=wpf
 
-$imagePath = $args[2]
+param (
+    [Parameter(Mandatory=$true)][int]$daySegment2,  # 0 = Day, 1 = Night
+    [Parameter(Mandatory=$true)][int]$daySegment4,  # 0 = Sunrise, 1 = Day, 2 = Sunset, 3 = Night
+    [Parameter(Mandatory=$true)][string]$imagePath  # Path to current wallpaper image
+)
 
 [Windows.System.UserProfile.LockScreen,Windows.System.UserProfile,ContentType=WindowsRuntime] | Out-Null
 Add-Type -AssemblyName System.Runtime.WindowsRuntime
