@@ -4,8 +4,8 @@
 
 ## Table of Contents
 
-- [Disable/Enable JPEG Compression](#disable-enable-jpeg-compression)
-- [Disable/Enable Startup Delay](#disable-enable-startup-delay)
+- [Disable/Enable JPEG Compression](#disableenable-jpeg-compression)
+- [Disable/Enable Startup Delay](#disableenable-startup-delay)
 
 ---
 
