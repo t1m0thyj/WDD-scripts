@@ -1,11 +1,17 @@
 # WDD-scripts
 PowerShell scripts that add features to [WinDynamicDesktop](https://github.com/t1m0thyj/WinDynamicDesktop)
 
-## Installing Scripts
+**Note:** Scripts are a new feature in WinDynamicDesktop 4.0. Click [here](https://github.com/t1m0thyj/WinDynamicDesktop/wiki/Installing-scripts) for instructions on how to install them.
 
-See [here](https://windd.info/scripts/) for a list of available scripts, and [here](https://github.com/t1m0thyj/WinDynamicDesktop/wiki/Installing-scripts) for how to install them.
+## Browse Existing Scripts
 
-## Creating New Scripts
+Select a category of scripts to browse:
+
+* [PowerShell (stable)](/stable)
+* [PowerShell (experimental)](/experimental)
+* [Registry Editor](/registry)
+
+## Create New Scripts
 
 PowerShell scripts are run by WinDynamicDesktop when the wallpaper image is updated. They are invoked with the following parameters:
 
