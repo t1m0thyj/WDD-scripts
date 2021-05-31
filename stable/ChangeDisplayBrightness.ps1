@@ -2,8 +2,9 @@
 
 param (
     [Parameter(Mandatory=$true)][int]$daySegment2,  # 0 = Day, 1 = Night
-    [Parameter(Mandatory=$true)][int]$daySegment4,  # 0 = Sunrise, 1 = Day, 2 = Sunset, 3 = Night
-    [Parameter(Mandatory=$true)][string]$imagePath  # Path to current wallpaper image
+    [Parameter(Mandatory=$true)][int]$daySegment4,  # -1 = N/A, 0 = Sunrise, 1 = Day, 2 = Sunset, 3 = Night
+    [Parameter(Mandatory=$true)][string]$imagePath, # Path to current wallpaper image
+    [Parameter(Mandatory=$true)][bool]$nightMode    # True if night mode is enabled
 )
 
 # Edit these values to be a valid screen brightness percent between 0 and 100
@@ -11,6 +12,10 @@ $sunriseBrightness = 40
 $dayBrightness = 80
 $sunsetBrightness = 30
 $nightBrightness = 20
+
+if ( $daySegment4 -eq -1 ) {
+    $daySegment4 = $daySegment2 * 2 + 1
+}
 
 $brightnessPercent = switch ( $daySegment4 )
 {
