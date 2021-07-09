@@ -9,6 +9,7 @@ Select a category of scripts to browse:
 
 * [PowerShell (stable)](/stable#readme)
 * [PowerShell (experimental)](/experimental#readme)
+* [PowerShell (standalone)](/standalone#readme)
 * [Registry Editor](/registry#readme)
 
 ## Create New Scripts
