@@ -6,6 +6,7 @@
 
 - [Change Lockscreen Image](#change-lockscreen-image)
 - [Change Microsoft Edge Theme](#change-microsoft-edge-theme)
+- [Change Microsoft Edge Background Image (Default profile)](#change-microsoft-edge-background-image-default-profile)
 
 ---
 
