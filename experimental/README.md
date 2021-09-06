@@ -38,3 +38,19 @@ Changes Microsoft Edge theme based on the time of day.
 ⚠️ Changing the theme does not update it in Edge immediately, restarting the browser is required for the change to take effect.
 
 [Download](/experimental/ChangeMicrosoftEdgeTheme.ps1?raw=true)
+
+---
+
+## Change Microsoft Edge Background Image (Default profile)
+
+Changes Microsoft Edge background image based on the time of day.
+
+**Author:** @khuongduybui
+
+**Requirements:**
+- Windows 10
+- Desktop version of WDD (doesn't work in Microsoft Store app)
+
+⚠️ This only changes the background for the default profile. Please edit the script on your computer to include other profiles.
+
+[Download](/experimental/ChangeEdgeBackgroundDefault.ps1?raw=true)
