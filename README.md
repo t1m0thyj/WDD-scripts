@@ -7,10 +7,9 @@ PowerShell scripts that add features to [WinDynamicDesktop](https://github.com/t
 
 Select a category of scripts to browse:
 
-* [PowerShell (stable)](/stable#readme)
-* [PowerShell (experimental)](/experimental#readme)
-* [PowerShell (standalone)](/standalone#readme)
-* [Registry Editor](/registry#readme)
+* [Stable](/stable#readme)
+* [Experimental](/experimental#readme)
+* [Other scripts](/other#readme)
 
 ## Create New Scripts
 

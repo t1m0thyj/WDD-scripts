@@ -1,4 +1,4 @@
-# PowerShell scripts (stable)
+# Stable PowerShell scripts
 
 **Note:** Scripts are a new feature in WinDynamicDesktop 4.0. Click [here](https://github.com/t1m0thyj/WinDynamicDesktop/wiki/Installing-scripts) for instructions on how to install them.
 
