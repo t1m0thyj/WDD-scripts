@@ -9,9 +9,9 @@ $jsonFilePath = "$Env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8b
 $jsonDataOld = Get-Content -Path $jsonFilePath
 $imagePath = $imagePath.Replace('\', '\\')
 
-If ($jsonDataOld -imatch '"backgroundImage":') {
-    $jsonDataNew = $jsonDataOld -replace ('"backgroundImage": ".+"', "`"backgroundImage`": `"$imagePath`"")
-} Elseif (-Not ($jsonDataOld -imatch '"defaults": {}')) {
+If ($jsonDataOld -match '(?<!//\s*)"backgroundImage":') {
+    $jsonDataNew = $jsonDataOld -replace ('(?<!//\s*)"backgroundImage": ".+"', "`"backgroundImage`": `"$imagePath`"")
+} Elseif (-Not ($jsonDataOld -match '"defaults": {}')) {
     $jsonDataNew = $jsonDataOld -replace ('"defaults": {', "`"defaults`": {
             `"backgroundImage`": `"$imagePath`",")
 } Else {
