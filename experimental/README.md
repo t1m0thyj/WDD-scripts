@@ -4,25 +4,9 @@
 
 ## Table of Contents
 
-- [Change Lockscreen Image](#change-lockscreen-image)
 - [Change Microsoft Edge Theme](#change-microsoft-edge-theme)
 - [Change Microsoft Edge Background Image (Default profile)](#change-microsoft-edge-background-image-default-profile)
-
----
-
-## Change Lockscreen Image
-
-Changes lockscreen image dynamically to match desktop wallpaper.
-
-**Author:** @t1m0thyj
-
-**Requirements:**
-- Windows 10
-- The "Background" option must be set to "Picture" in the Windows 10 lockscreen settings
-
-⚠️ Changing the image does not work consistently (see [MSDN](https://social.msdn.microsoft.com/Forums/vstudio/en-US/c5f7e014-a1a1-4d62-b550-7976381d62cd/change-windows-8-lockscreen-image-with-wpfservice-only-works-once?forum=wpf)).
-
-[Download](/experimental/ChangeLockscreenImage.ps1?raw=true)
+- [Synchronize Virtual Desktops](#synchronize-virtual-desktops)
 
 ---
 
@@ -55,3 +39,19 @@ Changes Microsoft Edge background image based on the time of day.
 ⚠️ This only changes the background for the default profile. Please edit the script on your computer to include other profiles.
 
 [Download](/experimental/ChangeEdgeBackgroundDefault.ps1?raw=true)
+
+---
+
+## Synchronize Virtual Desktops
+
+Synchronizes the same wallpaper across multiple virtual desktops.
+
+**Author:** @t1m0thyj
+
+**Requirements:**
+- Windows 11
+- Single wallpaper is set across all monitors
+
+⚠️ This script uses an unofficial API that is not supported by Microsoft and may break in future versions of Windows.
+
+[Download](/experimental/SyncVirtualDesktops.ps1?raw=true)
