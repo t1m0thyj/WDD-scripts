@@ -6,7 +6,7 @@ param (
 )
 
 if (-Not (Get-Module -ListAvailable -Name VirtualDesktop)) {
-	Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
+    Install-PackageProvider -Name NuGet -Force -Scope CurrentUser
     Install-Module -Name VirtualDesktop -Force -Scope CurrentUser
 }
 

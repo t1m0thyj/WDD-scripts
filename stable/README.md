@@ -7,6 +7,7 @@
 - [Change Display Brightness](#change-display-brightness)
 - [Change Windows App Theme](#change-windows-app-theme)
 - [Change Windows System Theme](#change-windows-system-theme)
+- [Change Windows Terminal Background](#change-windows-terminal-background)
 
 ---
 
@@ -48,3 +49,16 @@ Changes Windows 10 system theme (used by taskbar and Start menu) based on the ti
 - Desktop version of WDD (doesn't work in Microsoft Store app)
 
 [Download](/stable/ChangeWindowsSystemTheme.ps1?raw=true)
+
+---
+
+## Change Windows Terminal Background
+
+Changes background image in Windows Terminal to match desktop wallpaper.
+
+**Author:** @t1m0thyj
+
+**Requirements:**
+- Windows Terminal
+
+[Download](/stable/ChangeWindowsTerminalBackground.ps1?raw=true)
