@@ -15,7 +15,7 @@ Select a category of scripts to browse:
 
 PowerShell scripts are run by WinDynamicDesktop when the wallpaper image is updated. They are invoked with the following parameters:
 
-`<scriptName> [-daySegment2] <int> [-daySegment4] <int> [-imagePath] <string> [-nightMode] <bool>`
+`<scriptName> [-daySegment2] <int> [-daySegment4] <int> [-nightMode] <bool> [-imagePath <string>]`
 
 To read the values of these parameters, add the following lines at the top of your script:
 
@@ -23,8 +23,8 @@ To read the values of these parameters, add the following lines at the top of yo
 param (
     [Parameter(Mandatory=$true)][int]$daySegment2,  # 0 = Day, 1 = Night
     [Parameter(Mandatory=$true)][int]$daySegment4,  # -1 = N/A, 0 = Sunrise, 1 = Day, 2 = Sunset, 3 = Night
-    [Parameter(Mandatory=$true)][string]$imagePath, # Path to current wallpaper image
-    [Parameter(Mandatory=$true)][bool]$nightMode    # True if night mode is enabled
+    [Parameter(Mandatory=$true)][bool]$nightMode,   # True if night mode is enabled
+    [Parameter(Mandatory=$false)][string]$imagePath # Path to current wallpaper image
 )
 ```
 
