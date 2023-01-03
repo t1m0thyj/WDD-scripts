@@ -12,8 +12,9 @@ if (!$exePath) {
 }
 
 $taskAction = New-ScheduledTaskAction -Execute $exePath
+$taskSettings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
 $taskTrigger = New-ScheduledTaskTrigger -AtLogOn
-Register-ScheduledTask -TaskName WinDynamicDesktop -Action $taskAction -Trigger $taskTrigger -Description "Start WinDynamicDesktop at logon"
+Register-ScheduledTask -TaskName WinDynamicDesktop -Action $taskAction -Description "Start WinDynamicDesktop at logon" -Settings $taskSettings -Trigger $taskTrigger
 
 Add-Type -AssemblyName PresentationCore,PresentationFramework
 [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
