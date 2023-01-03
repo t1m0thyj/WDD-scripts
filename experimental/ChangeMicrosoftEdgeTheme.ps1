@@ -1,5 +1,3 @@
-# TODO Is there a way to make the theme change take affect immediately when Edge is open?
-
 param (
     [Parameter(Mandatory=$true)][int]$daySegment2,  # 0 = Day, 1 = Night
     [Parameter(Mandatory=$true)][int]$daySegment4,  # -1 = N/A, 0 = Sunrise, 1 = Day, 2 = Sunset, 3 = Night
