@@ -1,4 +1,4 @@
-# WARN Requires hardware the supports DDC/CI (the ability to change display brightness in Windows)
+# WARN Requires hardware that supports DDC/CI (the ability to change display brightness in Windows)
 
 param (
     [Parameter(Mandatory=$true)][int]$daySegment2,  # 0 = Day, 1 = Night

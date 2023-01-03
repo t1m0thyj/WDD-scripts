@@ -20,7 +20,7 @@ Changes Microsoft Edge theme based on the time of day.
 - Windows 10
 - Desktop version of WDD (doesn't work in Microsoft Store app)
 
-⚠️ Changing the theme does not update it in Edge immediately, restarting the browser is required for the change to take effect.
+⚠️ Changing the theme does not update it in Edge immediately. Restarting the browser is required for the change to take effect.
 
 [Download](/experimental/ChangeMicrosoftEdgeTheme.ps1?raw=true)
 
