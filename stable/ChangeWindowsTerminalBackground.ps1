@@ -25,6 +25,6 @@ If ($jsonDataOld -match '(?<!//\s*)"backgroundImage":') {
 }
 
 If ($jsonDataNew -ne $jsonDataOld) {
-    Set-Content -Path $jsonFilePath.tmp -Value $jsonDataNew
-    Move-Item -Path $jsonFilePath.tmp -Destination $jsonFilePath -Force
+    Set-Content -Path $jsonFilePath`.tmp -Value $jsonDataNew
+    Move-Item -Path $jsonFilePath`.tmp -Destination $jsonFilePath -Force
 }
