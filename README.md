@@ -17,6 +17,7 @@ https://www.deviantart.com/jepricreations/art/Windows-11-Cursors-Concept-v2-8864
 3) convert .reg to PowerShell using this website.
 https://reg2ps.azurewebsites.net/
 4) replace the lines mentioned down in the MouseCursorSwitch.ps1 file with the output PowerShell script from the website
+
 **for light mode desired mouse scheme,** replace these lines with website output:
 **from line 10** ($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
 **to line 32** ($RegConnect.Close()).
