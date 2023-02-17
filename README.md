@@ -20,6 +20,7 @@ https://reg2ps.azurewebsites.net/
 **for light mode desired mouse scheme,** replace these lines with website output:
 **from line 10** ($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
 **to line 32** ($RegConnect.Close()).
+
 **For dark mode desired mouse scheme,** replace these lines with website output:
 **from line 47**($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
 **to line 80** ($CursorRefresh::SystemParametersInfo(0x0057,0,$null,0)).
