@@ -14,7 +14,7 @@ https://www.deviantart.com/jepricreations/art/Windows-11-Cursors-Concept-v2-8864
 2) export registry from Computer\HKEY_CURRENT_USER\Control Panel\Cursors
 3) convert .reg to PowerShell using this website.
 https://reg2ps.azurewebsites.net/
-4) replace my registry text with the output PowerShell script from the website in the MouseCursorSwitch.ps1
+4) replace the lines mentioned down with the output PowerShell script from the website in the MouseCursorSwitch.ps1
 for light mode, replace these lines with website output:
 from line 10 ($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
 to line 32 ($RegConnect.Close()).
