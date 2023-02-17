@@ -1,3 +1,27 @@
+bigplayer-ai contribution:
+for the qBitTorrent fluent theme switch to work, you need to create two folders:
+1) called themes in the qBitTorrent installation folder
+2) called themes in the PowerShell scripts WDD folder.
+The themes' folder in the WDD PowerShell scripts folder should have the qBitTorrent fluent themes of this repo:
+https://github.com/witalihirsch/qBitTorrent-fluent-theme
+Also, you need to change the qBitTorrent theme in settings to this:
+![Clip_20230217_114652](https://user-images.githubusercontent.com/119108387/219610478-fa74004a-dc00-4919-b9b4-9b3f47b7a5bc.png)
+
+for the mouse scheme switch, I used this:
+Change light to dark/ light to dark depending on the system OS theme. I used these mouse schemes:
+https://www.deviantart.com/jepricreations/art/Windows-11-Cursors-Concept-v2-886489356
+1) you need to switch to the desired mouse scheme
+2) export registry from Computer\HKEY_CURRENT_USER\Control Panel\Cursors
+3) convert .reg to PowerShell using this website.
+https://reg2ps.azurewebsites.net/
+4) replace my registry text with the output PowerShell script from the website in the MouseCursorSwitch.ps1
+for light mode, replace these lines with website output:
+from line 10 ($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
+to line 32 ($RegConnect.Close()).
+For dark mode, replace these lines with website output:
+from line 47($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
+to line 80 ($CursorRefresh::SystemParametersInfo(0x0057,0,$null,0)).
+
 # WDD-scripts
 PowerShell scripts that add features to [WinDynamicDesktop](https://github.com/t1m0thyj/WinDynamicDesktop)
 
