@@ -35,11 +35,14 @@ https://reg2ps.azurewebsites.net/
 
 1) create in WDD scripts folder a folder like this:
 "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts"
-2) put all the scripts in it. (I added the .xml files so the transition would be more seamless (no errors on first run)).
-NightValue.xml
-StartValue.xml
-UpdateNightValueAtStartup.ps1
-restart_explorer.bat
+2) put all the files mentioned in it. (I added the .xml files so the transition would be more seamless (no errors on first run)).
+a) NightValue.xml
+
+b) StartValue.xml
+
+c) UpdateNightValueAtStartup.ps1
+
+d)restart_explorer.bat
 3) put the ZRestartExplroer.ps1 in WDD native scripts folder
 "~\AppData\Local\WinDynamicDesktop\scripts"
 4) delay WDD log on task scheduler for 1 second.
