@@ -18,4 +18,4 @@ if ( ($NightValue -ne $PreviousNightValue) -and ($StartValue -ne 1))
 
 $StartValue = 0
 $NightValue | Export-Clixml -path $Location
-$StartValue | Export-Clixml -path $Location
+$StartValue | Export-Clixml -path $Location2

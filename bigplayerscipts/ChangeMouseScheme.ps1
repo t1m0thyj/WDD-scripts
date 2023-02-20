@@ -7,75 +7,73 @@ param (
 $NightValue = If ($nightMode) {1} Else {$daySegment2}
 if ( $NightValue -eq 0)
 {
-$RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]â€CurrentUserâ€,â€$env:COMPUTERNAMEâ€)
-$RegCursors = $RegConnect.OpenSubKey(â€œControl Panel\Cursorsâ€,$true)
-$RegCursors.SetValue(â€œâ€,â€W11 Cursor Light HD v2.2 by Jepri Creationsâ€)
-$RegCursors.SetValue(â€œAppStartingâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\working.aniâ€)
-$RegCursors.SetValue(â€œArrowâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\pointer.curâ€)
-$RegCursors.SetValue(â€œCrosshairâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\precision.curâ€)
-$RegCursors.SetValue(â€œHandâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\link.curâ€)
-$RegCursors.SetValue(â€œHelpâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\help.curâ€)
-$RegCursors.SetValue(â€œIBeamâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\beam.curâ€)
-$RegCursors.SetValue(â€œNoâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\unavailable.curâ€)
-$RegCursors.SetValue(â€œNWPenâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\handwriting.curâ€)
-$RegCursors.SetValue(â€œPersonâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\person.curâ€)
-$RegCursors.SetValue(â€œPinâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\pin.curâ€)
-$RegCursors.SetValue(â€œprecisionhairâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\precision.curâ€)
-$RegCursors.SetValue(â€œSizeAllâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\move.curâ€)
-$RegCursors.SetValue(â€œSizeNESWâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\dgn2.curâ€)
-$RegCursors.SetValue(â€œSizeNSâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\vert.curâ€)
-$RegCursors.SetValue(â€œSizeNWSEâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\dgn1.curâ€)
-$RegCursors.SetValue(â€œSizeWEâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\horz.curâ€)
-$RegCursors.SetValue(â€œUpArrowâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\alternate.curâ€)
-$RegCursors.SetValue(â€œWaitâ€,â€%SYSTEMROOT%\Cursors\W11_light_v2.2\busy.aniâ€)
+$RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”)
+$RegCursors = $RegConnect.OpenSubKey(“Control Panel\Cursors”,$true)
+$RegCursors.SetValue(“”,”W11 Cursor Light HD v2.2 by Jepri Creations”)
+$RegCursors.SetValue(“AppStarting”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\working.ani”)
+$RegCursors.SetValue(“Arrow”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\pointer.cur”)
+$RegCursors.SetValue(“Crosshair”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\precision.cur”)
+$RegCursors.SetValue(“Hand”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\link.cur”)
+$RegCursors.SetValue(“Help”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\help.cur”)
+$RegCursors.SetValue(“IBeam”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\beam.cur”)
+$RegCursors.SetValue(“No”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\unavailable.cur”)
+$RegCursors.SetValue(“NWPen”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\handwriting.cur”)
+$RegCursors.SetValue(“Person”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\person.cur”)
+$RegCursors.SetValue(“Pin”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\pin.cur”)
+$RegCursors.SetValue(“precisionhair”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\precision.cur”)
+$RegCursors.SetValue(“SizeAll”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\move.cur”)
+$RegCursors.SetValue(“SizeNESW”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\dgn2.cur”)
+$RegCursors.SetValue(“SizeNS”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\vert.cur”)
+$RegCursors.SetValue(“SizeNWSE”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\dgn1.cur”)
+$RegCursors.SetValue(“SizeWE”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\horz.cur”)
+$RegCursors.SetValue(“UpArrow”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\alternate.cur”)
+$RegCursors.SetValue(“Wait”,”%SYSTEMROOT%\Cursors\W11_light_v2.2\busy.ani”)
 $RegCursors.Close()
 $RegConnect.Close()
-
-$CSharpSig = @â€™
+$CSharpSig = @’
 [DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
 public static extern bool SystemParametersInfo(
              uint uiAction,
              uint uiParam,
              uint pvParam,
              uint fWinIni);
-â€˜@
-$CursorRefresh = Add-Type -MemberDefinition $CSharpSig -Name WinAPICall -Namespace SystemParamInfo â€“PassThru
+‘@
+$CursorRefresh = Add-Type -MemberDefinition $CSharpSig -Name WinAPICall -Namespace SystemParamInfo –PassThru
 $CursorRefresh::SystemParametersInfo(0x0057,0,$null,0)
 }
 else
 {
-$RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]â€CurrentUserâ€,â€$env:COMPUTERNAMEâ€)
-$RegCursors = $RegConnect.OpenSubKey(â€œControl Panel\Cursorsâ€,$true)
-$RegCursors.SetValue(â€œâ€,â€W11 Cursors Dark HD v2.2 by Jepri Creationsâ€)
-$RegCursors.SetValue(â€œAppStartingâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\working.aniâ€)
-$RegCursors.SetValue(â€œArrowâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\pointer.curâ€)
-$RegCursors.SetValue(â€œCrosshairâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\precision.curâ€)
-$RegCursors.SetValue(â€œHandâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\link.curâ€)
-$RegCursors.SetValue(â€œHelpâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\help.curâ€)
-$RegCursors.SetValue(â€œIBeamâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\beam.curâ€)
-$RegCursors.SetValue(â€œNoâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\unavailable.curâ€)
-$RegCursors.SetValue(â€œNWPenâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\handwriting.curâ€)
-$RegCursors.SetValue(â€œPersonâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\person.curâ€)
-$RegCursors.SetValue(â€œPinâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\pin.curâ€)
-$RegCursors.SetValue(â€œprecisionhairâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\precision.curâ€)
-$RegCursors.SetValue(â€œSizeAllâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\move.curâ€)
-$RegCursors.SetValue(â€œSizeNESWâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\dgn2.curâ€)
-$RegCursors.SetValue(â€œSizeNSâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\vert.curâ€)
-$RegCursors.SetValue(â€œSizeNWSEâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\dgn1.curâ€)
-$RegCursors.SetValue(â€œSizeWEâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\horz.curâ€)
-$RegCursors.SetValue(â€œUpArrowâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\alternate.curâ€)
-$RegCursors.SetValue(â€œWaitâ€,â€%SYSTEMROOT%\Cursors\W11_dark_v2.2\busy.aniâ€)
+$RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”)
+$RegCursors = $RegConnect.OpenSubKey(“Control Panel\Cursors”,$true)
+$RegCursors.SetValue(“”,”W11 Cursors Dark HD v2.2 by Jepri Creations”)
+$RegCursors.SetValue(“AppStarting”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\working.ani”)
+$RegCursors.SetValue(“Arrow”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\pointer.cur”)
+$RegCursors.SetValue(“Crosshair”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\precision.cur”)
+$RegCursors.SetValue(“Hand”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\link.cur”)
+$RegCursors.SetValue(“Help”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\help.cur”)
+$RegCursors.SetValue(“IBeam”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\beam.cur”)
+$RegCursors.SetValue(“No”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\unavailable.cur”)
+$RegCursors.SetValue(“NWPen”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\handwriting.cur”)
+$RegCursors.SetValue(“Person”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\person.cur”)
+$RegCursors.SetValue(“Pin”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\pin.cur”)
+$RegCursors.SetValue(“precisionhair”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\precision.cur”)
+$RegCursors.SetValue(“SizeAll”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\move.cur”)
+$RegCursors.SetValue(“SizeNESW”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\dgn2.cur”)
+$RegCursors.SetValue(“SizeNS”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\vert.cur”)
+$RegCursors.SetValue(“SizeNWSE”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\dgn1.cur”)
+$RegCursors.SetValue(“SizeWE”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\horz.cur”)
+$RegCursors.SetValue(“UpArrow”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\alternate.cur”)
+$RegCursors.SetValue(“Wait”,”%SYSTEMROOT%\Cursors\W11_dark_v2.2\busy.ani”)
 $RegCursors.Close()
 $RegConnect.Close()
-
-$CSharpSig = @â€™
+$CSharpSig = @’
 [DllImport("user32.dll", EntryPoint = "SystemParametersInfo")]
 public static extern bool SystemParametersInfo(
              uint uiAction,
              uint uiParam,
              uint pvParam,
              uint fWinIni);
-â€˜@
-$CursorRefresh = Add-Type -MemberDefinition $CSharpSig -Name WinAPICall -Namespace SystemParamInfo â€“PassThru
+‘@
+$CursorRefresh = Add-Type -MemberDefinition $CSharpSig -Name WinAPICall -Namespace SystemParamInfo –PassThru
 $CursorRefresh::SystemParametersInfo(0x0057,0,$null,0)
 }
