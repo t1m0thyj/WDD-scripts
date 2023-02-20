@@ -1,0 +1,31 @@
+{
+    "experimental/ChangeEdgeBackgroundDefault.ps1": [
+        "74ff9c392fae1b8d5548fd6e750c8745",
+        "5199d358076abe352c078fabec752196"
+    ],
+    "experimental/ChangeLockscreenImage.ps1": [
+        "c2f12600304d8f8d75d66a5d4b5aec4b"
+    ],
+    "experimental/ChangeMicrosoftEdgeTheme.ps1": [
+        "97239b479dc2f3b0e38ecc27e6394a8e",
+        "44bf3e04022556c468d85d2d8c8d43dc"
+    ],
+    "stable/ChangeDisplayBrightness.ps1": [
+        "565e9189599d944b520705521b84ec0a",
+        "e5de20f74b185e1a40083d0409644ccb"
+    ],
+    "stable/ChangeWindowsAppTheme.ps1": [
+        "7528fd0476080143d635a1d7deee5f0e",
+        "3e8dab8657ae66502ed8f644978b74b7"
+    ],
+    "stable/ChangeWindowsSystemTheme.ps1": [
+        "39cf423345ea1b028062e788cd60ed50",
+        "53bad1d3d75c6331dc57a453fc318b9b"
+    ],
+    "experimental/SyncVirtualDesktops.ps1": [
+        "e69cc1edf30efb03ac49997aba2751e5"
+    ],
+    "stable/ChangeWindowsTerminalBackground.ps1": [
+        "923e3ab28e9a9a06b08d8dc31390c2f8"
+    ]
+}
