@@ -17,7 +17,7 @@ if (-Not (Get-Module -ListAvailable -Name VirtualDesktop)) {
     Install-Module -Name VirtualDesktop -Force -Scope CurrentUser
     $settingsUpdated = $true
 } elseif (-Not (Test-Path -Path $settingsFile -PathType Leaf) -Or ($currentWinVer -Ne (Import-Clixml -Path $settingsFile))) {
-    Update-Module -Name VirtualDesktop -Force -Scope CurrentUser
+    Update-Module -Name VirtualDesktop -Force
     $settingsUpdated = $true
 }
 
