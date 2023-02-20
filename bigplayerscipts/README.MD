@@ -1,5 +1,6 @@
 bigplayer-ai contribution:
-### for the qBitTorrent fluent theme switch to work, you need to create a folder called themes in the PowerShell scripts WDD folder:
+### for the qBitTorrent fluent theme switch to work:
+you need to create a folder called themes in the PowerShell scripts WDD folder:
 "~\AppData\Local\WinDynamicDesktop\script\qbittorrenttheme"
 and copy those two files(https://github.com/witalihirsch/qBitTorrent-fluent-theme) to "qbittorrenttheme" folder in the WDD PowerShell scripts folder. 
 
