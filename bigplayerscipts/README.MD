@@ -35,6 +35,7 @@ https://reg2ps.azurewebsites.net/
 
 1) create in WDD scripts folder a folder like this:
 "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts"
+
 2) put all the files mentioned below in it. (I added the .xml files so the transition would be more seamless (no errors on first run)):
 
 a) NightValue.xml
@@ -44,8 +45,12 @@ b) StartValue.xml
 c) UpdateNightValueAtStartup.ps1
 
 d)restart_explorer.bat
+
 3) put the ZRestartExplroer.ps1 in WDD native scripts folder:
 "~\AppData\Local\WinDynamicDesktop\scripts"
+
 4) delay WDD log on task scheduler for 1 second.
+
 5) add another start up task that runs UpdateNightValueAtStartup.ps1.
-6) enjoy restarting explorer to reload all tweaked registry values.
+
+6) enjoy restarting explorer only when needed to reload all the tweaked registry values.
