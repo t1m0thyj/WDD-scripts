@@ -1,12 +1,11 @@
 bigplayer-ai contribution:
-### for the qBitTorrent fluent theme switch to work, you need to create two folders:
-1) called themes in the qBitTorrent installation folder
-2) called themes in the PowerShell scripts WDD folder.
-With two files in it or The themes' folder in the WDD PowerShell scripts folder should have the qBitTorrent fluent themes from this repo: https://github.com/witalihirsch/qBitTorrent-fluent-theme
+### for the qBitTorrent fluent theme switch to work, you need to create a folder called themes in the PowerShell scripts WDD folder:
+"~\AppData\Local\WinDynamicDesktop\script\qbittorrenttheme"
+and copy those two files(https://github.com/witalihirsch/qBitTorrent-fluent-theme) to "qbittorrenttheme" folder in the WDD PowerShell scripts folder. 
 
-A) fluent-light.qbtheme
+a) fluent-light.qbtheme
 
-B) fluent-dark.qbtheme
+b) fluent-dark.qbtheme
 
 Also, you need to change the qBitTorrent theme in settings to this:
 
@@ -29,13 +28,14 @@ https://reg2ps.azurewebsites.net/
 **For dark mode desired mouse scheme,** replace these lines with website output:
 **from line 47**($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
 **to line 80** ($CursorRefresh::SystemParametersInfo(0x0057,0,$null,0)).
-
-
+5)Place the edited MouseCursorSwitch.ps1 file to your WDD scripts folder: 
+"~\AppData\Local\WinDynamicDesktop\script".
 ### restart explorer while saving windows positions and paths if dark/light mode switches (to reload all tweaked registry values).
 
 1) create in WDD scripts folder a folder like this:
 "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts"
-2) put all the files mentioned in it. (I added the .xml files so the transition would be more seamless (no errors on first run)).
+2) put all the files mentioned in it. (I added the .xml files so the transition would be more seamless (no errors on first run)):
+
 a) NightValue.xml
 
 b) StartValue.xml
