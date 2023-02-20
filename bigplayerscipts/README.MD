@@ -2,7 +2,7 @@ bigplayer-ai contribution:
 ### for the qBitTorrent fluent theme switch to work, you need to create two folders:
 1) called themes in the qBitTorrent installation folder
 2) called themes in the PowerShell scripts WDD folder.
-The themes' folder in the WDD PowerShell scripts folder should have the qBitTorrent fluent themes (I used the mica themes you can change the script accordingly to your liking) from this repo:
+The themes' folder in the WDD PowerShell scripts folder should have the qBitTorrent fluent themes from this repo:
 https://github.com/witalihirsch/qBitTorrent-fluent-theme
 Also, you need to change the qBitTorrent theme in settings to this:
 
@@ -17,9 +17,11 @@ https://www.deviantart.com/jepricreations/art/Windows-11-Cursors-Concept-v2-8864
 3) convert .reg to PowerShell using this website.
 https://reg2ps.azurewebsites.net/
 4) replace the lines mentioned down in the MouseCursorSwitch.ps1 file with the output PowerShell script from the website
+
 **for light mode desired mouse scheme,** replace these lines with website output:
 **from line 10** ($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
 **to line 32** ($RegConnect.Close()).
+
 **For dark mode desired mouse scheme,** replace these lines with website output:
 **from line 47**($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
 **to line 80** ($CursorRefresh::SystemParametersInfo(0x0057,0,$null,0)).
@@ -30,6 +32,10 @@ https://reg2ps.azurewebsites.net/
 1) create in WDD scripts folder a folder like this:
 "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts"
 2) put all the scripts in it. (I added the .xml files so the transition would be more seamless (no errors on first run)).
+NightValue.xml
+StartValue.xml
+UpdateNightValueAtStartup.ps1
+restart_explorer.bat
 3) put the ZRestartExplroer.ps1 in WDD native scripts folder
 "~\AppData\Local\WinDynamicDesktop\scripts"
 4) delay WDD log on task scheduler for 1 second.
