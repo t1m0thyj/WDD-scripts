@@ -2,6 +2,9 @@ bigplayer-ai contribution:
 ### for the qBitTorrent fluent theme switch to work, you need to create two folders:
 1) called themes in the qBitTorrent installation folder
 2) called themes in the PowerShell scripts WDD folder.
+With two files in it:
+fluent-light.qbtheme
+fluent-dark.qbtheme
 The themes' folder in the WDD PowerShell scripts folder should have the qBitTorrent fluent themes from this repo:
 https://github.com/witalihirsch/qBitTorrent-fluent-theme
 Also, you need to change the qBitTorrent theme in settings to this:
