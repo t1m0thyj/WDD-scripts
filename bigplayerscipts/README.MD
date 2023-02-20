@@ -20,7 +20,7 @@ https://www.deviantart.com/jepricreations/art/Windows-11-Cursors-Concept-v2-8864
 2) export all registry keys from regedit.exe "Computer\HKEY_CURRENT_USER\Control Panel\Cursors"
 3) convert .reg to PowerShell using this website.
 https://reg2ps.azurewebsites.net/
-4) replace the lines mentioned down in the MouseCursorSwitch.ps1 file with the output PowerShell script from the website
+4) replace the lines mentioned below in the MouseCursorSwitch.ps1 file with the output PowerShell script from the website
 
 **for light mode desired mouse scheme,** replace these lines with website output:
 **from line 10** ($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
@@ -35,7 +35,7 @@ https://reg2ps.azurewebsites.net/
 
 1) create in WDD scripts folder a folder like this:
 "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts"
-2) put all the files mentioned in it. (I added the .xml files so the transition would be more seamless (no errors on first run)):
+2) put all the files mentioned below in it. (I added the .xml files so the transition would be more seamless (no errors on first run)):
 
 a) NightValue.xml
 
@@ -44,7 +44,7 @@ b) StartValue.xml
 c) UpdateNightValueAtStartup.ps1
 
 d)restart_explorer.bat
-3) put the ZRestartExplroer.ps1 in WDD native scripts folder
+3) put the ZRestartExplroer.ps1 in WDD native scripts folder:
 "~\AppData\Local\WinDynamicDesktop\scripts"
 4) delay WDD log on task scheduler for 1 second.
 5) add another start up task that runs UpdateNightValueAtStartup.ps1.
