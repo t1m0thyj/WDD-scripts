@@ -23,3 +23,15 @@ https://reg2ps.azurewebsites.net/
 **For dark mode desired mouse scheme,** replace these lines with website output:
 **from line 47**($RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]”CurrentUser”,”$env:COMPUTERNAME”))
 **to line 80** ($CursorRefresh::SystemParametersInfo(0x0057,0,$null,0)).
+
+
+### restart explorer while saving windows positions and paths if dark/light mode switches (to reload all tweaked registry values).
+
+1) create in WDD scripts folder a folder like this:
+"~\AppData\Local\WinDynamicDesktop\scripts\globalScripts"
+2) put all the scripts in it. (I added the .xml files so the transition would be more seamless (no errors on first run)).
+3) put the ZRestartExplroer.ps1 in WDD native scripts folder
+"~\AppData\Local\WinDynamicDesktop\scripts"
+4) delay WDD log on task scheduler for 1 second.
+5) add another start up task that runs UpdateNightValueAtStartup.ps1.
+6) enjoy restarting explorer to reload all tweaked registry values.
