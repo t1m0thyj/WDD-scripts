@@ -4,6 +4,7 @@ param (
     [Parameter(Mandatory=$true)][bool]$nightMode,   # True if night mode is enabled
     [Parameter(Mandatory=$false)][string]$imagePath # Path to current wallpaper image
 )
+Start-Sleep -Milliseconds 1500
 $Location = "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts\NightValue.xml"
 $PreviousNightValue = Import-CliXml $Location
 $NightValue = If ($nightMode) {1} Else {$daySegment2}
@@ -13,9 +14,11 @@ $StartValue = Import-CliXml $Location2
 
 if ( ($NightValue -ne $PreviousNightValue) -and ($StartValue -ne 1))
 {
-   & "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts\restart_explorer.bat"
+   Start-Sleep -Milliseconds 800
+   $SavedWindows = Get-ExplorerWindow -Quit
+   Get-Process explorer | Stop-Process
+   if ( $null -ne $SavedWindows)
+   {
+        Restore-Explorerwindow $SavedWindows
+   }
 }
-
-$StartValue = 0
-$NightValue | Export-Clixml -path $Location
-$StartValue | Export-Clixml -path $Location2
