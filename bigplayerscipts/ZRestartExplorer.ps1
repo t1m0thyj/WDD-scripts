@@ -5,14 +5,9 @@ param (
     [Parameter(Mandatory=$false)][string]$imagePath # Path to current wallpaper image
 )
 Start-Sleep -Milliseconds 1500
-$Location = "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts\NightValue.xml"
-$PreviousNightValue = Import-CliXml $Location
 $NightValue = If ($nightMode) {1} Else {$daySegment2}
 
-$Location2 = "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts\StartValue.xml"
-$StartValue = Import-CliXml $Location2
-
-if ( ($NightValue -ne $PreviousNightValue) -and ($StartValue -ne 1))
+if ( ($NightValue -ne $env:PreviousNightValue) -and ($env:StartValue -ne 1))
 {
    Start-Sleep -Milliseconds 800
    $SavedWindows = Get-ExplorerWindow -Quit

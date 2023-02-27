@@ -5,14 +5,6 @@ param (
     [Parameter(Mandatory=$false)][string]$imagePath # Path to current wallpaper image
 )
 
-# Define file paths for the xml files
-$nightValueFilePath = "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts\NightValue.xml"
-$startValueFilePath = "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts\StartValue.xml"
-
-# Import the previous night value and start value from their xml files
-$previousNightValue = Import-CliXml $nightValueFilePath
-$startValue = Import-CliXml $startValueFilePath
-
 # Determine the current night value based on whether the system is in night mode
 $nightValue = if ($nightMode) {
     1 # If the system is in night mode, set nightValue to 1
@@ -20,8 +12,7 @@ $nightValue = if ($nightMode) {
     $daySegment2 # Otherwise, set it to the value of $daySegment2
 }
 
-
-if ( ($NightValue -eq 0 -and $StartValue -eq 1) -or ($NightValue -ne $PreviousNightValue -and $StartValue -eq 0 -and $NightValue -eq 0))
+if ( ($NightValue -eq 0 -and $env:StartValue -eq 1) -or ($NightValue -ne $env:PreviousNightValue -and $env:StartValue -eq 0 -and $NightValue -eq 0))
 {
 $RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]"CurrentUser","$env:COMPUTERNAME")
 $RegCursors = $RegConnect.OpenSubKey("Control Panel\Cursors",$true)
@@ -59,7 +50,7 @@ public static extern bool SystemParametersInfo(uint uiAction, uint uiParam, stri
 }
 
 
-ElseIf (($NightValue -eq 1 -and $StartValue -eq 1) -or ($NightValue -ne $PreviousNightValue -and $StartValue -eq 0 -and $NightValue -eq 1))
+ElseIf (($NightValue -eq 1 -and $env:StartValue -eq 1) -or ($NightValue -ne $env:PreviousNightValue -and $env:StartValue -eq 0 -and $NightValue -eq 1))
 {
 $RegConnect = [Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]"CurrentUser","$env:COMPUTERNAME")
 $RegCursors = $RegConnect.OpenSubKey("Control Panel\Cursors",$true)
@@ -96,13 +87,12 @@ public static extern bool SystemParametersInfo(uint uiAction, uint uiParam, stri
 
 }
 
-$StartValue = 0
-if (($NightValue -ne $PreviousNightValue))
+if (($NightValue -ne $env:PreviousNightValue))
 {
-    $NightValue | Export-Clixml -path $nightValueFilePath
+    Set-Item -Path env:PreviousNightValue  -Value ($NightValue)
 }
 
-if ($StartValue -ne 0)
+if ($env:StartValue -ne 0)
 {
-    $StartValue | Export-Clixml -path $startValueFilePath
+    Set-Item -Path env:StartValue -Value (0)
 }
