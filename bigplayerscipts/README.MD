@@ -40,20 +40,13 @@ https://reg2ps.azurewebsites.net/
 A .zip file with installation instructions can be downloaded here:
 
 SaveRestoreExplorerWindows: https://1drv.ms/u/s!AqkRvcFO6LtjwEZGWm6KN6hBAKXJ?e=d1Sxi6
-3) put all the files mentioned below in it. (I added the .xml files so the transition would be more seamless (no errors on the first run)):
 
-a) NightValue.xml
-
-b) StartValue.xml
-
-c) UpdateNightValueAtStartup.ps1
-
-4) put the ZRestartExplroer.ps1 in the WDD native scripts' folder:
+3) put the ZRestartExplroer.ps1 in the WDD native scripts' folder:
 "~\AppData\Local\WinDynamicDesktop\scripts"
 
-5) delay WDD log on task scheduler for 1 second.
+4) delay WDD log on task scheduler for 1 second.
 
-6) add another start-up task that runs UpdateNightValueAtStartup.ps1.
+5) add another start-up task that runs UpdateNightValueAtStartup.ps1.
 
-7) enjoy restarting explorer only when needed to reload all the tweaked registry values.
+6) enjoy restarting explorer only when needed to reload all the tweaked registry values.
 
