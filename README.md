@@ -32,8 +32,8 @@ https://reg2ps.azurewebsites.net/
 5)Place the edited MouseCursorSwitch.ps1 file in your WDD scripts folder: 
 "~\AppData\Local\WinDynamicDesktop\script".
 ### restart explorer while saving windows positions and paths if dark/light mode switches (to reload all tweaked registry values).
-
-1) create in the WDD scripts folder a folder like this:
+You need to download restore windows powershell module from here: https://1drv.ms/u/s!AqkRvcFO6LtjwEZGWm6KN6hBAKXJ?e=d1Sxi6
+1) create in the WDD scripts folder a folder like this: 
 "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts"
 
 2) put all the files mentioned below in it. (I added the .xml files so the transition would be more seamless (no errors on the first run)):
@@ -44,7 +44,6 @@ b) StartValue.xml
 
 c) UpdateNightValueAtStartup.ps1
 
-d)restart_explorer.bat
 
 3) put the ZRestartExplroer.ps1 in the WDD native scripts' folder:
 "~\AppData\Local\WinDynamicDesktop\scripts"
