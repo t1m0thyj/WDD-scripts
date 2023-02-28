@@ -36,10 +36,16 @@ https://reg2ps.azurewebsites.net/
 
 1) create in the WDD scripts folder a folder like this:
 "~\AppData\Local\WinDynamicDesktop\scripts\globalScripts"
-2) Download and install a powershell module to save and restore explorer windows. 
-A .zip file with installation instructions can be downloaded here:
 
-SaveRestoreExplorerWindows: https://1drv.ms/u/s!AqkRvcFO6LtjwEZGWm6KN6hBAKXJ?e=d1Sxi6
+2) put all the files mentioned below in it. (I added the .xml files so the transition would be more seamless (no errors on the first run)):
+
+a) NightValue.xml
+
+b) StartValue.xml
+
+c) UpdateNightValueAtStartup.ps1
+
+d)restart_explorer.bat
 
 3) put the ZRestartExplroer.ps1 in the WDD native scripts' folder:
 "~\AppData\Local\WinDynamicDesktop\scripts"
