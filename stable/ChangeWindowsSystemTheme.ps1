@@ -6,7 +6,7 @@ param (
 )
 
 $registryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize"
-$dwordValue = If ($nightMode) {0} Elseif ($daysegment4 != 1) {1}
+$dwordValue = If ($nightMode) {0} Elseif ($daysegment4 -ne 1) {1}
 
 if ( Test-Path $registryPath )
 {
