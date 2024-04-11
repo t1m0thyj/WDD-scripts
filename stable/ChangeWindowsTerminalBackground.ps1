@@ -1,17 +1,12 @@
-param (
-    [Parameter(Mandatory=$true)][int]$daySegment2,  # 0 = Day, 1 = Night
-    [Parameter(Mandatory=$true)][int]$daySegment4,  # -1 = N/A, 0 = Sunrise, 1 = Day, 2 = Sunset, 3 = Night
-    [Parameter(Mandatory=$true)][bool]$nightMode,   # True if night mode is enabled
-    [Parameter(Mandatory=$false)][string]$imagePath # Path to current wallpaper image
-)
+$event = $Input | ConvertFrom-Json
 
-If (-Not ($PSBoundParameters.ContainsKey("imagePath"))) {
+If (-Not $event.imagePaths) {
     Break
 }
 
 $jsonFilePath = "$Env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $jsonDataOld = Get-Content -Path $jsonFilePath
-$imagePath = $imagePath.Replace('\', '\\')
+$imagePath = $event.imagePaths[0].Replace('\', '\\')
 
 If ($jsonDataOld -match '(?<!//\s*)"backgroundImage":') {
     $jsonDataNew = $jsonDataOld -replace ('(?<!//\s*)"backgroundImage": ".+"', "`"backgroundImage`": `"$imagePath`"")
