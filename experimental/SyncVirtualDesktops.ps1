@@ -1,6 +1,6 @@
-$event = $Input | ConvertFrom-Json
+$params = $Input | ConvertFrom-Json
 
-If (-Not $event.imagePaths) {
+If (-Not $params.imagePaths) {
     Break
 }
 
@@ -18,7 +18,7 @@ if (-Not (Get-Module -ListAvailable -Name VirtualDesktop)) {
 
 Get-DesktopList | ForEach-Object {
     if (-Not (Test-CurrentDesktop -Desktop $_.Number)) {
-        Set-DesktopWallpaper -Desktop $_.Number -Path $event.imagePaths[0]
+        Set-DesktopWallpaper -Desktop $_.Number -Path $params.imagePaths[0]
     }
 }
 

@@ -1,12 +1,12 @@
-$event = $Input | ConvertFrom-Json
+$params = $Input | ConvertFrom-Json
 
-If (-Not $event.imagePaths) {
+If (-Not $params.imagePaths) {
     Break
 }
 
 $jsonFilePath = "$Env:LocalAppData\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $jsonDataOld = Get-Content -Path $jsonFilePath
-$imagePath = $event.imagePaths[0].Replace('\', '\\')
+$imagePath = $params.imagePaths[0].Replace('\', '\\')
 
 If ($jsonDataOld -match '(?<!//\s*)"backgroundImage":') {
     $jsonDataNew = $jsonDataOld -replace ('(?<!//\s*)"backgroundImage": ".+"', "`"backgroundImage`": `"$imagePath`"")

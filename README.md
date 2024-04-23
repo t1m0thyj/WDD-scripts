@@ -20,10 +20,10 @@ PowerShell scripts are run by WinDynamicDesktop when the wallpaper image is upda
 * `themeMode` - 0 = Automatic, 1 = Light Mode, 2 = Dark Mode
 * `imagePaths` - List of paths to current wallpaper image for each display
 
-To read the values of these parameters, add the line below to the top of your script and access them like this: `$event.daySegment2`
+To read the values of these parameters, add the line below to the top of your script and access them like this: `$params.daySegment2`
 
 ```powershell
-$event = $Input | ConvertFrom-Json
+$params = $Input | ConvertFrom-Json
 ```
 
 A sample script that uses parameters can be found [here](./SampleScript.ps1). When the sample script is installed and gets run by WinDynamicDesktop, it will display the values of all the parameters.

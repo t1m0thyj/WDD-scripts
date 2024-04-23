@@ -1,7 +1,7 @@
-$event = $Input | ConvertFrom-Json
+$params = $Input | ConvertFrom-Json
 
 $registryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize"
-$dwordValue = 1 - (If ($event.themeMode -Eq 0) {$event.daySegment2} Else {$event.themeMode - 1})
+$dwordValue = 1 - (If ($params.themeMode -Eq 0) {$params.daySegment2} Else {$params.themeMode - 1})
 
 if (Test-Path $registryPath)
 {
