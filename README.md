@@ -13,21 +13,19 @@ Select a category of scripts to browse:
 
 ## Create New Scripts
 
-PowerShell scripts are run by WinDynamicDesktop when the wallpaper image is updated. They are invoked with the following parameters:
+PowerShell scripts are run by WinDynamicDesktop when the wallpaper image is updated. They are invoked with a JSON object that contains the following parameters:
 
-`<scriptName> [-daySegment2] <int> [-daySegment4] <int> [-nightMode] <bool> [-imagePath <string>]`
+* `daySegment2` - 0 = Day, 1 = Night
+* `daySegment4` - -1 = N/A, 0 = Sunrise, 1 = Day, 2 = Sunset, 3 = Night
+* `themeMode` - 0 = Automatic, 1 = Light Mode, 2 = Dark Mode
+* `imagePaths` - List of paths to current wallpaper image for each display
 
-To read the values of these parameters, add the following lines at the top of your script:
+To read the values of these parameters, add the line below to the top of your script and access them like this: `$params.daySegment2`
 
 ```powershell
-param (
-    [Parameter(Mandatory=$true)][int]$daySegment2,  # 0 = Day, 1 = Night
-    [Parameter(Mandatory=$true)][int]$daySegment4,  # -1 = N/A, 0 = Sunrise, 1 = Day, 2 = Sunset, 3 = Night
-    [Parameter(Mandatory=$true)][bool]$nightMode,   # True if night mode is enabled
-    [Parameter(Mandatory=$false)][string]$imagePath # Path to current wallpaper image
-)
+$params = $Input | ConvertFrom-Json
 ```
 
-A sample script that makes use of these variables can be found [here](./SampleScript.ps1). When the sample script is installed and gets run by WinDynamicDesktop, it will display the values of all the parameters.
+A sample script that uses parameters can be found [here](./SampleScript.ps1). When the sample script is installed and gets run by WinDynamicDesktop, it will display the values of all the parameters.
 
 If you create a script and would like to share it with other users of the app, pull requests in this repository are welcome.
