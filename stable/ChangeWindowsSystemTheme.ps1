@@ -7,3 +7,7 @@ if (Test-Path $registryPath)
 {
     New-ItemProperty -Path $registryPath -Name "SystemUsesLightTheme" -Value $dwordValue -PropertyType DWORD -Force | Out-Null
 }
+
+# Restart Windows Explorer
+Stop-Process -Name explorer -Force
+Start-Process explorer
