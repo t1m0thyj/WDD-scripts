@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [Change Display Brightness](#change-display-brightness)
+- [Change Full Windows Theme](#change-full-windows-theme)
 - [Change Windows App Theme](#change-windows-app-theme)
 - [Change Windows System Theme](#change-windows-system-theme)
 - [Change Windows Terminal Background](#change-windows-terminal-background)
@@ -21,6 +22,20 @@ Changes brightness of primary display based on the time of day, using values tha
 - Hardware that supports DDC/CI (the ability to change display brightness in Windows)
 
 [Download](/stable/ChangeDisplayBrightness.ps1?raw=true)
+
+---
+
+## Change Full Windows Theme
+
+Changes Windows 11 app theme (used by Store apps) and system theme (used by taskbar and Start menu) based on the time of day.
+
+**Author:** @KrakenByte27
+
+**Requirements:**
+- Windows 11
+- Desktop version or Microsoft Store version of WDD
+
+[Download](/stable/ChangeWindowsFullTheme.ps1?raw=true)
 
 ---
 
