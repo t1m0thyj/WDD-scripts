@@ -8,6 +8,7 @@ if (Test-Path $registryPath) {
     Set-ItemProperty -Path $registryPath -Name "SystemUsesLightTheme" -Value $dwordValue -Type DWORD -Force
 }
 
+# Call Windows theme refresh
 Add-Type -TypeDefinition @"
 using System;
 using System.Runtime.InteropServices;
@@ -22,10 +23,8 @@ $HWND_BROADCAST = [IntPtr]::Zero -bor 0xFFFF
 $WM_SETTINGCHANGE = 0x1A
 $SPI_SETCLIENTAREAANIMATION = 0x1043
 
-# Convertire la stringa "ImmersiveColorSet" in un puntatore
 $param = [System.Runtime.InteropServices.Marshal]::StringToHGlobalUni("ImmersiveColorSet")
 
 $null = [Win32Utils]::SendMessageTimeout($HWND_BROADCAST, $WM_SETTINGCHANGE, [IntPtr]::Zero, $param, 2, 5000, [ref]([IntPtr]::Zero))
 
-# Liberare la memoria allocata per la stringa
 [System.Runtime.InteropServices.Marshal]::FreeHGlobal($param)
