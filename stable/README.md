@@ -46,7 +46,7 @@ Changes Windows 10 app theme (used by Store apps) based on the time of day.
 **Author:** @t1m0thyj
 
 **Requirements:**
-- Windows 10 of Windows 11
+- Windows 10 or Windows 11
 - Desktop version of WDD (doesn't work in Microsoft Store app)
 
 [Download](/stable/ChangeWindowsAppTheme.ps1?raw=true)
