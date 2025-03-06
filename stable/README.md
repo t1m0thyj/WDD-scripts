@@ -32,7 +32,7 @@ Changes Windows 11 app theme (used by Store apps) and system theme (used by task
 **Author:** @KrakenByte27
 
 **Requirements:**
-- Windows 11
+- Windows 10 or Windows 11
 - Desktop version or Microsoft Store version of WDD
 
 [Download](/stable/ChangeWindowsFullTheme.ps1?raw=true)
@@ -46,7 +46,7 @@ Changes Windows 10 app theme (used by Store apps) based on the time of day.
 **Author:** @t1m0thyj
 
 **Requirements:**
-- Windows 10
+- Windows 10 of Windows 11
 - Desktop version of WDD (doesn't work in Microsoft Store app)
 
 [Download](/stable/ChangeWindowsAppTheme.ps1?raw=true)
@@ -60,7 +60,7 @@ Changes Windows 10 system theme (used by taskbar and Start menu) based on the ti
 **Author:** @t1m0thyj
 
 **Requirements:**
-- Windows 10
+- Windows 10 or Windows 11
 - Desktop version of WDD (doesn't work in Microsoft Store app)
 
 [Download](/stable/ChangeWindowsSystemTheme.ps1?raw=true)
