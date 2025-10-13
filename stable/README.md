@@ -26,12 +26,12 @@ Changes brightness of primary display based on the time of day, using values tha
 
 ## Change Windows App Theme
 
-Changes Windows 10 app theme (used by Store apps) based on the time of day.
+Changes Windows app theme (used by Store apps) based on the time of day.
 
 **Author:** @t1m0thyj
 
 **Requirements:**
-- Windows 10
+- Windows 10 and up
 - Desktop version of WDD (doesn't work in Microsoft Store app)
 
 [Download](/stable/ChangeWindowsAppTheme.ps1?raw=true)
@@ -40,12 +40,12 @@ Changes Windows 10 app theme (used by Store apps) based on the time of day.
 
 ## Change Windows System Theme
 
-Changes Windows 10 system theme (used by taskbar and Start menu) based on the time of day.
+Changes Windows system theme (used by taskbar and Start menu) based on the time of day.
 
 **Author:** @t1m0thyj
 
 **Requirements:**
-- Windows 10
+- Windows 10 and up
 - Desktop version of WDD (doesn't work in Microsoft Store app)
 
 [Download](/stable/ChangeWindowsSystemTheme.ps1?raw=true)
