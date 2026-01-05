@@ -1,5 +1,8 @@
 # WDD-scripts
+
 PowerShell scripts that add features to [WinDynamicDesktop](https://github.com/t1m0thyj/WinDynamicDesktop)
+
+⚠️ This repository is no longer actively maintained. The scripts work as-is and serve as examples of extending WDD. Support is not guaranteed, but pull requests are welcome.
 
 **Note:** Scripts are a new feature in WinDynamicDesktop 4.0. Click [here](https://github.com/t1m0thyj/WinDynamicDesktop/wiki/Installing-scripts) for instructions on how to install them.
 
