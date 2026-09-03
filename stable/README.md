@@ -8,6 +8,8 @@
 - [Change Windows App Theme](#change-windows-app-theme)
 - [Change Windows System Theme](#change-windows-system-theme)
 - [Change Windows Terminal Background](#change-windows-terminal-background)
+- [Theme By Time Of Day](#theme-by-time-of-day)
+- [Night Light By Time](#night-light-by-time)
 
 ---
 
@@ -62,3 +64,31 @@ Changes background image in Windows Terminal to match desktop wallpaper.
 - Windows Terminal
 
 [Download](/stable/ChangeWindowsTerminalBackground.ps1?raw=true)
+
+---
+
+## Theme By Time Of Day
+
+Switches the full Windows theme (both apps and system) between light and dark mode at user-configured times of day, instead of following WDD's sunrise/sunset schedule.
+
+**Author:** @mamadaevv
+
+**Requirements:**
+- Windows 10 and up
+- Desktop version of WDD (doesn't work in Microsoft Store app)
+
+[Download](/stable/ThemeByTimeOfDay.ps1?raw=true)
+
+---
+
+## Night Light By Time
+
+Enables Windows Night Light (blue light reduction) at night and disables it in the morning, at user-configured times.
+
+**Author:** @mamadaevv
+
+**Requirements:**
+- Windows 10 and up
+- Night Light must have been enabled at least once manually in Settings (so the CloudStore registry keys exist)
+
+[Download](/stable/NightLightByTime.ps1?raw=true)
